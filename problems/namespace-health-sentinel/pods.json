@@ -1,0 +1,204 @@
+[
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "name": "auth-service-597cf-abc12",
+      "namespace": "production",
+      "creationTimestamp": "2026-10-10T08:00:00Z"
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastTransitionTime": "2026-10-10T08:01:15Z"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "name": "auth-api",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-10T08:01:14Z"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "name": "payment-gateway-7b4d-xyz89",
+      "namespace": "production",
+      "creationTimestamp": "2026-10-14T20:30:00Z"
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastTransitionTime": "2026-10-14T20:31:00Z"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "name": "payment-processor",
+          "ready": false,
+          "restartCount": 12,
+          "state": {
+            "waiting": {
+              "reason": "CrashLoopBackOff",
+              "message": "Back-off restart failed container"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "name": "frontend-ui-84f9b-62kk9",
+      "namespace": "production",
+      "creationTimestamp": "2026-10-14T12:00:00Z"
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastTransitionTime": "2026-10-14T12:02:00Z"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "name": "nginx",
+          "ready": true,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-14T12:02:00Z"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "name": "legacy-report-worker-31a",
+      "namespace": "production",
+      "creationTimestamp": "2026-10-14T19:15:00Z"
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastTransitionTime": "2026-10-14T19:20:00Z"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "name": "worker-app",
+          "ready": false,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-14T19:15:30Z"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "name": "broken-pipeline-v2",
+      "namespace": "staging",
+      "creationTimestamp": "2026-10-14T20:40:00Z"
+    },
+    "status": {
+      "phase": "Pending",
+      "conditions": [
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastTransitionTime": "2026-10-14T20:40:00Z"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "name": "app-container",
+          "ready": false,
+          "restartCount": 0,
+          "state": {
+            "waiting": {
+              "reason": "ImagePullBackOff",
+              "message": "Back-off pulling image \"registry.internal/app:v2-wrong\""
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "name": "db-migration-job-9klmx",
+      "namespace": "staging",
+      "creationTimestamp": "2026-10-14T18:00:00Z"
+    },
+    "status": {
+      "phase": "Failed",
+      "reason": "DeadlineExceeded",
+      "message": "Pod was active on the node longer than the specified deadline"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "name": "config-watcher-abc",
+      "namespace": "staging",
+      "creationTimestamp": "2026-10-14T20:45:00Z"
+    },
+    "status": {
+      "phase": "Running",
+      "conditions": [
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastTransitionTime": "2026-10-14T20:45:10Z"
+        }
+      ],
+      "containerStatuses": [
+        {
+          "name": "sidecar",
+          "ready": false,
+          "restartCount": 0,
+          "state": {
+            "running": {
+              "startedAt": "2026-10-14T20:45:05Z"
+            }
+          }
+        }
+      ]
+    }
+  }
+]
